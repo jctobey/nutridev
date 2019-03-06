@@ -1,6 +1,6 @@
 import React from "react";
-import App from "./App";
-import { Route, Router, Switch, Redirect } from "react-router-dom";
+import Search from "./components/Search";
+import { Route,  BrowserRouter as Router , Switch, Redirect } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
@@ -30,8 +30,7 @@ export const makeMainRoutes = () => {
     <MuiThemeProvider theme={theme}>
       <Router>
         <Switch>
-          <Route exact path="/" render={props => <App {...props} />} />
-
+          <Route exact path="/" render={props => <Search {...props} />} />
           <Route component={NoMatch} />
         </Switch>
       </Router>
